@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct RxSwift_SwiftUIApp: App {
+    let dataService: DataServiceProtocol = DataService()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ItemsListView(viewModel: ItemsViewModel(dataService: dataService))
         }
     }
 }
